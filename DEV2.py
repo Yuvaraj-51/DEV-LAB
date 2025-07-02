@@ -1,5 +1,5 @@
-import pandas as
-pddata = {
+import pandas as pd
+data = {
 'sender': ['alice@example.com', 'bob@example.com', 'alice@example.com'],
 'receiver': ['bob@example.com', 'alice@example.com', 'carol@example.com'],
 'subject': ['Hello', 'Meeting Reminder', 'Project Update'],
@@ -10,17 +10,12 @@ pddata = {
 df = pd.DataFrame(data)
 df['timestamp'] = pd.to_datetime(df['timestamp'])
 df.to_csv('emails.csv', index=False)
-print("CSV file created
-successfully.")import pandas as pd
+print("CSV file created successfully.")
+import pandas as pd
 import matplotlib.pyplot as
 pltimport seaborn as sns
 df = pd.read_csv("emails.csv")
 print(df.info())
-
-PERFORM EXPLORATORY DATA ANALYSIS (EDA)
-
-lOMoAR cPSD|15081951
-
 df['timestamp'] = pd.to_datetime(df['timestamp'])
 df.dropna(inplace=True)
 df['email_length'] =
@@ -41,14 +36,13 @@ plt.ylabel('Number of Emails')
 plt.title('Top 10 Email Senders')
 plt.tight_layout()
 plt.show()
-df['year_month'] =
-df['timestamp'].dt.to_period('M') email_activity =
-df.groupby('year_month').size()
+df['year_month'] =df['timestamp'].dt.to_period('M') 
+email_activity =df.groupby('year_month').size()
 plt.figure(figsize=(12, 6))
 email_activity.plot(kind='line')
 plt.xlabel('Year-Month')
 plt.ylabel('Number of Emails')
-plt.title('Email Activity Over
-Time') plt.xticks(rotation=45)
+plt.title('Email Activity OverTime') 
+plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
